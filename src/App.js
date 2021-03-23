@@ -122,8 +122,7 @@ function App() {
 
             <label for="endInput" class="time-label">End:</label>
             <input id="endInput" type="text" onChange={(e) => setEnd(e.target.value)}/>        
-          </div>
-      
+          </div>      
       <div>            
 
         <Switch>
