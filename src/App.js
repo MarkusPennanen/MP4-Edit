@@ -116,10 +116,8 @@ function App() {
 
           <div id="clip-length-div">
             <h3>Clip length (seconds)</h3>
-
             <label for="startInput" class="time-label">Start:</label>
             <input id="startInput" type="text" onChange={(e) => setStart(e.target.value)}/>
-
             <label for="endInput" class="time-label">End:</label>
             <input id="endInput" type="text" onChange={(e) => setEnd(e.target.value)}/>        
           </div>      
@@ -128,13 +126,11 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <button className="button-convert" onClick={convertToGif}>Convert to GIF</button>
-
             { gif && <div id="gif-container"><img alt="Output gif" src={gif} width="350" />
-
               <div>
                   <a id="gif-download" href={gif} download="file">Save File</a>
                   <CopyToClipboard text={gif}>
-                    <button>Copy to clipboard</button>
+                  <button>Copy to clipboard</button>
                   </CopyToClipboard>
                 </div>
               </div>}
@@ -142,9 +138,7 @@ function App() {
 
           <Route path="/mp3" exact>
             <button className="button-convert" onClick={convertToMp3}>Convert to MP3</button>
-
             { mp3 && <div id="mp3-container"><audio controls="controls" src={mp3} type="audio/mp3" />
-
               <div>
                 <a id="gif-download" href={mp3} download="file">Save File</a>
                 <CopyToClipboard text={mp3}>
@@ -162,10 +156,8 @@ function App() {
               <button className="speedButtons" type="text" onClick={(e) => setAudioSpeed("1.5") + setVideoSpeed("0.75")}>1.5x</button>
               <button className="speedButtons" type="text" onClick={(e) => setAudioSpeed("2") + setVideoSpeed("0.5")}>2x</button>
           </div>
-            <button className="button-convert" onClick={convertToMp4}>Convert to MP4</button>
-              
+            <button className="button-convert" onClick={convertToMp4}>Convert to MP4</button>          
             { mp4 && <div id="mp4-container"><video controls="controls" src={mp4} type="video/mp4" width="350" />
-
               <div>
                 <a id="mp4-download" href={mp4} download="file">Save File</a>
                 <CopyToClipboard text={mp4}>
