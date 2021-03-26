@@ -166,18 +166,18 @@ function App() {
               </div>
               </div>} 
           </Route>
-
          </Switch>
+             
         {loading && <Loader
-      type="Puff"
-      color="#00BFFF"
-      height={100}
-      width={100}
-      timeout={60000}
-    />}
+          type="Puff"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          timeout={60000}
+        />}
     </div>
   </>}
-  </Router>
+</Router>
 </div>
   
   )
