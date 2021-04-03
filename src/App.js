@@ -39,8 +39,11 @@ function App() {
 
   const convertToGif = async () => {
     try {
+      
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
+      
     setLoading(true);
+      
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'gif', 'out.gif');
 
     const data = ffmpeg.FS('readFile', 'out.gif');
@@ -49,13 +52,17 @@ function App() {
 
     setGif(url)
     setLoading(false);
+      
     } catch(err) {alert("Currently processing a file")}
   }
 
   const convertToMp3 = async () => {
     try {
+      
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
+      
     setLoading(true);
+      
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'mp3', 'out.mp3');
 
     const data = ffmpeg.FS('readFile', 'out.mp3');
@@ -64,12 +71,15 @@ function App() {
 
     setMp3(url)
     setLoading(false);
+      
   } catch(err) {alert("Currently processing a file")}
   }
 
   const convertToMp4 = async () => {
     try {
+      
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
+      
     setLoading(true);
 
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-filter_complex',
@@ -80,7 +90,6 @@ function App() {
     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
 
     setMp4(url)
-
     setLoading(false);
 
   } catch(err) {alert("Currently processing a file")}
