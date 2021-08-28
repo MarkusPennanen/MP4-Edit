@@ -53,7 +53,7 @@ function App() {
     setGif(url)
     setLoading(false);
       
-    } catch(err) {alert("Currently processing a file")}
+    } catch(err) {alert("Processing, please wait.")}
   }
 
   const convertToMp3 = async () => {
