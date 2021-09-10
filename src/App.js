@@ -27,17 +27,17 @@ function App() {
   const [videoSpeed, setVideoSpeed] = useState([1]);
   const [audioSpeed, setAudioSpeed] = useState([1]);
 
-  const load = async () => {
+  const load = async () => { // FFMPEG startup
     await ffmpeg.load();
     setReady(true);
   }
 
-  useEffect(() => {
+  useEffect(() => { // Start FFMPEG on page load
     load();
     setSite("MP4 to GIF")
   }, [])
 
-  const convertToGif = async () => {
+  const convertToGif = async () => { // Convert given mp4 file to gif form
     try {
       
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
@@ -53,7 +53,7 @@ function App() {
   }
 
   
-  const convertToMp3 = async () => {
+  const convertToMp3 = async () => { // Convert given mp4 file to mp3 form
     try {
       
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));     
@@ -69,7 +69,7 @@ function App() {
  }
 
   
-  const convertToMp4 = async () => {
+  const convertToMp4 = async () => { // Edit properties of given mp4 file
     try {
       
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));     
@@ -167,7 +167,7 @@ function App() {
           </Route>
          </Switch>
              
-        {loading && <Loader
+        {loading && <Loader // Loading animation while FFMPEG processes a file
           type="Puff"
           color="#00BFFF"
           height={100}
@@ -182,7 +182,7 @@ function App() {
   )
     :
     (
-      <>
+      <> // Loading animation while FFMPEG is starting up
       <div id="initiateScreen">
       <h1>Initializing application</h1>
       <Loader
