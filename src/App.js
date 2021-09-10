@@ -41,7 +41,6 @@ function App() {
     try {
       
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
-      
     setLoading(true);
       
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'gif', 'out.gif');
@@ -57,8 +56,7 @@ function App() {
   const convertToMp3 = async () => {
     try {
       
-    ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
-      
+    ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));     
     setLoading(true);
       
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'mp3', 'out.mp3');
@@ -74,8 +72,7 @@ function App() {
   const convertToMp4 = async () => {
     try {
       
-    ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
-      
+    ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));     
     setLoading(true);
 
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-filter_complex',
