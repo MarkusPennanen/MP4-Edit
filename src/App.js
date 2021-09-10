@@ -45,17 +45,15 @@ function App() {
     setLoading(true);
       
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'gif', 'out.gif');
-
     const data = ffmpeg.FS('readFile', 'out.gif');
-
     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'image/gif' }));
 
     setGif(url)
-    setLoading(false);
-      
+    setLoading(false); 
     } catch(err) {alert("Processing, please wait.")}
   }
 
+  
   const convertToMp3 = async () => {
     try {
       
@@ -64,17 +62,15 @@ function App() {
     setLoading(true);
       
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-f', 'mp3', 'out.mp3');
-
     const data = ffmpeg.FS('readFile', 'out.mp3');
-
     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'audio/mp3' }));
 
     setMp3(url)
-    setLoading(false);
-      
+    setLoading(false); 
   } catch(err) {alert("Currently processing a file")}
-  }
+ }
 
+  
   const convertToMp4 = async () => {
     try {
       
@@ -84,16 +80,13 @@ function App() {
 
     await ffmpeg.run('-i', 'test.mp4', '-t', `${end}`, '-ss', `${start}`, '-filter_complex',
      '[0:v]setpts='+`${videoSpeed}`+'*PTS[v];[0:a]atempo='+`${audioSpeed}`+'[a]', '-map', '[v]', '-map', '[a]', 'out.mp4');
-
     const data = ffmpeg.FS('readFile', 'out.mp4');
-
     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
 
     setMp4(url)
     setLoading(false);
-
   } catch(err) {alert("Currently processing a file")}
-  }
+ }
 
 
   return ready ? (
