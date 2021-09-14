@@ -156,8 +156,7 @@ function App() {
               </div>
               </div>} 
           </Route>
-         </Switch>
-          // Loading animation while FFMPEG processes a file   
+         </Switch> 
         {loading && <Loader 
           type="Puff"
           color="#00BFFF"
