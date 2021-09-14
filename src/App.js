@@ -128,9 +128,6 @@ function App() {
             { gif && <div id="gif-container"><img alt="Output gif" src={gif} width="350" />
               <div>
                   <a id="gif-download" href={gif} download="file">Save File</a>
-                  <CopyToClipboard text={gif}>
-                  <button>Copy to clipboard</button>
-                  </CopyToClipboard>
                 </div>
               </div>}
           </Route>
