@@ -102,7 +102,7 @@ function App() {
       Upload file
       </label>
       <input id="file-upload" type="file" onChange={(e) => setVideo(e.target.files?.item(0))} />
-      <div id="mobile-error" style:"hidden"><h1>This application does not function on mobile devices</h1></div>
+      <div id="mobile-error"><h1>This application does not function on mobile devices</h1></div>
 
       { video && 
       <>
