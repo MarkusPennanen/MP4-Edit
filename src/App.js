@@ -3,7 +3,6 @@ import './App.css';
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {
   BrowserRouter as Router,
   Switch,
@@ -103,7 +102,7 @@ function App() {
       Upload file
       </label>
       <input id="file-upload" type="file" onChange={(e) => setVideo(e.target.files?.item(0))} />
-      <div id="mobile-error"><h2>This application does not function on mobile</h2></div>
+      <div id="mobile-error" style:"hidden"><h1>This application does not function on mobile</h1></div>
 
       { video && 
       <>
@@ -138,9 +137,6 @@ function App() {
             { mp3 && <div id="mp3-container"><audio controls="controls" src={mp3} type="audio/mp3" />
               <div>
                 <a id="gif-download" href={mp3} download="file">Save File</a>
-                <CopyToClipboard text={mp3}>
-                  <button>Copy to clipboard</button>
-                </CopyToClipboard>
               </div>
               </div>} 
           </Route>
@@ -157,9 +153,6 @@ function App() {
             { mp4 && <div id="mp4-container"><video controls="controls" src={mp4} type="video/mp4" width="350" />
               <div>
                 <a id="mp4-download" href={mp4} download="file">Save File</a>
-                <CopyToClipboard text={mp4}>
-                  <button>Copy to clipboard</button>
-                </CopyToClipboard>
               </div>
               </div>} 
           </Route>
