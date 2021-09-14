@@ -173,7 +173,7 @@ function App() {
   )
     :
     (
-      <> // Loading animation while FFMPEG is starting up
+      <>
       <div id="initiateScreen">
       <h1>Initializing application</h1>
       <Loader
