@@ -5,6 +5,9 @@
 @media screen and (max-width: 800px) {
   #mobile-error {
     visibility: visible;
+      position: fixed;
+      left: 50%;
+      top: 50%;
   }
 }
 
