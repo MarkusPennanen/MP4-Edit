@@ -89,7 +89,8 @@ function App() {
 
   <div className="App">
     <Router>
-
+    
+    <div id="mobile-error"><h1>This application does not function on mobile devices</h1></div>
     <div id="navbar-1">
       <Link className="nav-item" to="/" onClick={(e) => setSite("MP4 to GIF")}>MP4 to GIF</Link>
       <Link className="nav-item" to="/mp3" onClick={(e) => setSite("MP4 to MP3")}>MP4 to MP3</Link>
@@ -102,7 +103,6 @@ function App() {
       Upload file
       </label>
       <input id="file-upload" type="file" onChange={(e) => setVideo(e.target.files?.item(0))} />
-      <div id="mobile-error"><h1>This application does not function on mobile devices</h1></div>
 
       { video && 
       <>
