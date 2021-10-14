@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1400px) {
-  a {
+  .nav-item {
     font-size: 9px;
   }
   
@@ -180,7 +180,6 @@ a:hover, a:active {
   display: inline-block;
   margin-top: 25%;
   width: 60%;
-  max-height: 3%;
 }
 
 .speedButtons {
