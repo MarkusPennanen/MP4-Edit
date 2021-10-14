@@ -16,9 +16,8 @@
     font-size: 9px;
   }
   
-  .speedButtons {
-    max-width: 5%;
-    max-height: 5%;
+  #speedButtons-div {
+    max-width: 20%;
   }
 }
 
