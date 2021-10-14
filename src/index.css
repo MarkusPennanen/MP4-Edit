@@ -6,14 +6,16 @@
   #mobile-error {
     visibility: visible;
       position: fixed;
-      left: 50%;
-      top: 50%;
+      left: 40%;
+      top: 40%;
+      padding: 5%;
+      background-color: black;
   }
 }
 
 @media screen and (max-width: 800px) {
   .nav-item {
-    font-size: 9px;
+    height: 15%;
   }
   
   #speedButtons-div {
