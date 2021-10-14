@@ -167,7 +167,7 @@ a:hover, a:active {
 .nav-item {
   display: inline-block;
   margin-top: 25%;
-  width: 60%;
+  max-width: 30%;
   max-height: 3%;
 }
 
@@ -175,12 +175,16 @@ a:hover, a:active {
 font-size: 15px;
 margin-top: 0px;
 margin-bottom: 1%;
+max-height: 3%;
+max-width: 3%;
 }
 
 #speedButtons-div {
   position: fixed;
   right: 0;
   top: 13%;
+  max-height: 20%;
+  max-width: 30%;
 }
 
 #clip-length-div {
