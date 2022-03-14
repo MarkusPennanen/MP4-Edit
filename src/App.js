@@ -109,7 +109,7 @@ function App() {
 
         <div id="mobile-error"><h1>This application does not function on mobile devices</h1></div>
         <div id="navbar-1">
-          <Link className="nav-item" to="/mp34" onClick={(e) => setSite("MP4 to MP4")}>MP4 to GIF</Link>
+          <Link className="nav-item" to="/mp34" onClick={(e) => setSite("MP3 to MP4")}>MP3 to MP4</Link>
           <Link className="nav-item" to="/" onClick={(e) => setSite("MP4 to GIF")}>MP4 to GIF</Link>
           <Link className="nav-item" to="/mp3" onClick={(e) => setSite("MP4 to MP3")}>MP4 to MP3</Link>
           <Link className="nav-item" to="/mp4" onClick={(e) => setSite("Edit MP4")}>Edit MP4</Link>
@@ -151,7 +151,7 @@ function App() {
                 </Route>
 
                 <Route path="/mp34" exact>
-                  <label for="image-upload" class="custom-image-upload">
+                  <label for="image-upload" class="custom-file-upload">
                     Upload file
                   </label>
                   <input id="image-upload" type="file" onChange={(e) => setImage(e.target.files?.item(0))} />
