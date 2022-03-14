@@ -92,7 +92,7 @@ function App() {
       ffmpeg.FS('writeFile', 'image.jpg', await fetchFile(image)); //Save fetched image to filesystem
       setLoading(true);
 
-      await ffmpeg.run('-i', 'image.jpg', '-i', 'audio.mp3', '-c:v', 'libx264', '-tune', 'stillimage', '-c:a', '-copy', 'out.mp4');
+      await ffmpeg.run('-i', 'image.jpg', '-i', 'audio.mp3', '-c:v', 'libx264', '-tune', 'stillimage', '-c:a', 'copy', 'out.mp4');
       const data = ffmpeg.FS('readFile', 'out.mp4');
       const url = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
 
